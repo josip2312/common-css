@@ -1,0 +1,22 @@
+$font-scale: (
+	small: (
+		// Minor third
+		200: 0.9rem,
+		300: 1rem,
+		400: 1.2rem,
+		500: 1.44rem,
+		600: 1.728rem,
+		700: 2.074rem,
+		800: 2.488rem,
+	),
+	big: (
+		// Perfect fourth
+		200: 0.75rem,
+		300: 1rem,
+		400: 1.333rem,
+		500: 1.777rem,
+		600: 2.369rem,
+		700: 3.157rem,
+		800: 4.209rem,
+	),
+);

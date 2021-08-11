@@ -1,0 +1,55 @@
+@use 'breakpoints' as *;
+
+@mixin mq($key) {
+	$size: map-get($breakpoints, $key);
+
+	@media only screen and (min-width: $size) {
+		@content;
+	}
+}
+
+@mixin hover-shadow {
+	&::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		pointer-events: none;
+		z-index: -1;
+		box-shadow: var(--shadow-3);
+		border-radius: var(--br-sm);
+		opacity: 0;
+		transition: opacity 200ms ease-in-out;
+		@content;
+	}
+
+	&:hover,
+	&:focus {
+		&::after {
+			opacity: 1;
+		}
+	}
+}
+
+@mixin hover-scale {
+	& {
+		transition: transform 200ms ease-in-out;
+		backface-visibility: hidden;
+	}
+	&:hover {
+		transform: scale(1.005);
+	}
+}
+
+@mixin bgOverlay($amount, $color) {
+	background: linear-gradient(var(--clr-overlay-#{$amount}), var(--clr-overlay-#{$amount})), $color;
+}
+
+@mixin textGradient($color1, $start, $color2) {
+	background: linear-gradient(to right bottom, $color1, $start, $color2);
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+}

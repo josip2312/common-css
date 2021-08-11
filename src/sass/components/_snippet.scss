@@ -1,0 +1,24 @@
+@use "../abstracts" as *;
+
+.snippet {
+  padding: 0 2.5rem 0 1.5rem;
+  overflow-y: scroll;
+  height: 20rem;
+
+  @include mq(small) {
+    height: 25rem;
+  }
+}
+
+.snippet-description {
+  max-width: 40ch;
+  margin: 0 auto;
+  font-size: calc(var(--fs-300) + 2px);
+  display: grid;
+  place-items: center;
+}
+
+.highlight {
+  color: var(--clr-primary-main);
+  font-weight: 600;
+}
